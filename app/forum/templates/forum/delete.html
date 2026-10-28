@@ -1,0 +1,1 @@
+{% extends 'forum/base.html' %}{% block content %}<section class="reading"><h1>Delete your post?</h1><p>Other people's comments will remain.</p><form method="post">{% csrf_token %}<button class="primary">Delete permanently</button><a class="button" href="{% url 'thread' post.pk %}">Cancel</a></form></section>{% endblock %}

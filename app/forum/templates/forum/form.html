@@ -1,0 +1,1 @@
+{% extends 'forum/base.html' %}{% block content %}<section class="reading"><a href="{% url 'board' %}">← Board</a><h1>{{ heading }}</h1><p class="meta">Posting as {{ user.username|default:'Anonymous' }}</p><form method="post">{% csrf_token %}{{ form.as_p }}<button class="primary">{{ submit_label|default:'Post discussion' }}</button></form></section>{% endblock %}

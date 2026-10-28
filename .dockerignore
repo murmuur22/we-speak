@@ -1,0 +1,9 @@
+**/.venv
+**/__pycache__
+**/*.pyc
+**/data
+**/*.sqlite3*
+**/.env*
+.git
+prototype
+prototype-v2

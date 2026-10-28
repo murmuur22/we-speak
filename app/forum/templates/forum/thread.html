@@ -1,0 +1,17 @@
+{% extends 'forum/base.html' %}{% block content %}<section class="reading">
+<a href="{% url 'board' %}">← Board</a>
+<h1>{% if post.deleted %}[deleted]{% else %}{{ post.title }}{% endif %}</h1>
+{% if not post.deleted %}<p class="meta">{{ post.author.username|default:'Anonymous' }} · {{ post.created_at|timesince }} ago{% if post.edited_at %} · edited{% endif %}</p><div class="body">{{ post.body|linebreaksbr }}</div>{% endif %}
+{% if owned %}<div class="actions"><a href="{% url 'edit_post' post.pk %}">Edit</a><a href="{% url 'delete_post' post.pk %}">Delete</a></div>{% endif %}
+{% include 'forum/attachments.html' with item=post route='attach_post' can_attach=owned %}
+{% include 'forum/reactions.html' with item=post route='react_post' %}
+<h2>Comments</h2>
+{% for comment in comments %}<article class="comment">
+{% if comment.deleted %}<p class="muted">[deleted]</p>{% else %}<p class="meta">{{ comment.author.username|default:'Anonymous' }} · {{ comment.created_at|timesince }} ago{% if comment.edited_at %} · edited{% endif %}</p><div class="body">{{ comment.body|linebreaksbr }}</div>{% endif %}
+{% if comment.owned %}<div class="actions"><a href="{% url 'edit_comment' comment.pk %}">Edit comment</a><a href="{% url 'delete_comment' comment.pk %}">Delete comment</a></div>{% endif %}
+{% include 'forum/attachments.html' with item=comment route='attach_comment' can_attach=comment.owned %}
+{% include 'forum/reactions.html' with item=comment route='react_comment' %}
+</article>{% empty %}<p class="muted">No comments yet.</p>{% endfor %}
+{% if comments.has_previous %}<a href="?page={{ comments.previous_page_number }}">Previous comments</a>{% endif %}{% if comments.has_next %}<a href="?page={{ comments.next_page_number }}">More comments</a>{% endif %}
+{% if can_comment %}<p class="meta">Posting as {{ user.username|default:'Anonymous' }}</p><form method="post" action="{% url 'comment' post.pk %}">{% csrf_token %}{{ reply_form.as_p }}<button class="primary">Post reply</button></form>{% else %}<a href="{% url 'login' %}">Enter to comment</a>{% endif %}
+</section>{% endblock %}

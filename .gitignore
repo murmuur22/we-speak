@@ -1,0 +1,14 @@
+# Local design history and workstation-only helpers stay outside public source.
+prototype/
+prototype-v2/
+.venv/
+**/__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+app/data/
+app/static-built/
+.DS_Store
