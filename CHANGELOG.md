@@ -8,6 +8,7 @@
 - Add nonroot Gunicorn/WhiteNoise Docker packaging, Caddy HTTPS, a private app network, explicit proxy trust, loopback-only default exposure, private configuration generation and Python 3.11/3.12 CI.
 - Fix build-time upload-spool ownership caught in review: preserve mode 0700 with runtime UID/GID 10001. Reproduce the baseline failure in the real container, then verify a fresh image/volume with a valid disk-spooled PNG upload, download and empty transient directory.
 - Update Pillow to 13.0.0 after the dependency audit; repeat pip-audit reports no known vulnerabilities in the pinned Python requirements. This does not qualify OS images or all third-party licenses.
+- Correct the initial hosted-CI configuration to use a job-level supported data-directory value; retain explicit nonzero test discovery.
 - Verification: 42 application tests pass locally and in the rebuilt container; trusted-CA HTTPS, secure cookies, static assets, maintenance authorization/CSRF, and image-inclusive backup/restore exercised. Public-domain deployment, broad device/load coverage and stable-release qualification remain separate gates.
 
 ## Earlier — first working development build

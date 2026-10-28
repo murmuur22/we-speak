@@ -10,7 +10,7 @@ jobs:
         python: ['3.11', '3.12']
     env:
       WE_SPEAK_DEV: '1'
-      WE_SPEAK_DATA: ${{ runner.temp }}/we-speak
+      WE_SPEAK_DATA: app/data
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
