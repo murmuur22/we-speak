@@ -11,4 +11,4 @@ WE_SPEAK_DEV=1 .venv/bin/python manage.py test forum
 WE_SPEAK_DEV=1 .venv/bin/python manage.py runserver 127.0.0.1:8000 --noreload
 ```
 
-Do not expose the development server publicly. Source is a development preview; license selection and stable-release qualification are pending.
+Do not expose the development server publicly. Source is available under the [MIT License](../LICENSE); stable-release qualification remains pending.

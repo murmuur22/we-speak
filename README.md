@@ -76,4 +76,4 @@ Still pending: wider device/accessibility and sustained-load qualification, reco
 
 ## License
 
-License selection is pending the owner's decision. This public development repository is **not yet an open-source licensed release**. Third-party dependencies retain their own licenses. No additional license grant is implied by publication.
+WE Speak is licensed under the [MIT License](LICENSE). Copyright (c) 2026 murmuur22 and contributors. Third-party dependencies retain their own licenses. This license does not change the project's development-preview status or imply a security warranty.

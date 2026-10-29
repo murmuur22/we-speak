@@ -1,7 +1,8 @@
 # Changelog
 
 ## Unreleased — hardening and self-hosting preview
-- Connect the project to `https://github.com/murmuur22/we-speak.git`; keep local prototypes, databases, secrets and workstation-only evidence out of source control. License selection remains pending; this is a development source preview, not a stable/open-source licensed release.
+- Connect the project to `https://github.com/murmuur22/we-speak.git`; keep local prototypes, databases, secrets and workstation-only evidence out of source control. This is a development preview, not a stable release.
+- Add the owner-approved MIT License, credited to murmuur22 and contributors, and update documentation. Third-party dependencies retain their own licenses.
 - Redact authentication password fields from diagnostic reports, prevent caching of dynamic/private pages and use a private transient-upload directory.
 - Implement staff-only database/storage status, paginated identities, audited disable/restore with conversations preserved, and protection against disabling operator accounts through the web dashboard.
 - Add an integrity-checked, private, overwrite-refusing SQLite backup command, including image bytes; exercise snapshot restoration and password/image recovery on isolated synthetic data.
